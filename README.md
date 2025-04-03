@@ -28,36 +28,4 @@ git clone https://github.com/yourusername/BayesianHorseshoe.git
 cd BayesianHorseshoe
 pip install -e .
 
-Usage
-Below is a simple example demonstrating the core workflow:
 
-python
-Copy
-from bayesian_horseshoe.data import simulate_data
-from bayesian_horseshoe.model import build_horseshoe_model
-from bayesian_horseshoe.inference import run_mcmc
-from bayesian_horseshoe.diagnostics import plot_trace, effective_sample_size
-import pymc3 as pm
-
-# Simulate synthetic data
-X, y, true_beta = simulate_data(n=100, p=50, n_relevant=5, noise_std=0.5, seed=42)
-
-# Build the Bayesian model with Horseshoe Prior
-model = build_horseshoe_model(X, y)
-
-# Run MCMC sampling
-trace = run_mcmc(model, draws=2000, tune=1000, target_accept=0.9, cores=1)
-
-# Summarize the posterior samples for the regression coefficients
-print(pm.summary(trace, var_names=["beta"]))
-
-# Visualize trace plots for the regression coefficients
-plot_trace(trace, var_names=["beta"])
-
-# Compute and display effective sample sizes for the 'beta' parameters
-ess = effective_sample_size(trace, var_names=["beta"])
-print("Effective sample sizes for 'beta':")
-for param, neff in ess.items():
-    print(f"{param}: {neff}")
-Notebook Demonstration
-A detailed Jupyter Notebook (horseshoe_example.ipynb) is provided in the examples/ directory. This notebook walks through the full process—from data simulation to inference and diagnostics—with interactive visualizations.
