@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     author="hyun wook sim",  
     author_email="jay.sim@mail.utoronto.ca",  
-    url="https://github.com/yourusername/BayesianHorseshoe",  
+    url="https://github.com/byunbeee/BayesianHorseshoe",  
     packages=find_packages(),
     install_requires=[
         "numpy>=1.18.0",
