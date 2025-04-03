@@ -27,6 +27,7 @@ Clone the repository and install the package in editable mode:
 git clone https://github.com/yourusername/BayesianHorseshoe.git
 cd BayesianHorseshoe
 pip install -e .
+```
 
 Alternatively, if the package is available on PyPI, you can install it via:
 ```
