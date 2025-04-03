@@ -69,4 +69,10 @@ for param, neff in ess.items():
 ## Notebook Demonstration
 A detailed Jupyter Notebook (horseshoe_example.ipynb) is provided in the examples/ directory. This notebook walks through the full process—from data simulation to inference and diagnostics—with interactive visualizations.
 
+## Acknowledgements
+
+This project leverages advanced Bayesian techniques and the PyMC3 framework.
+
+Code suggestions and project structure recommendations were provided with the assistance of ChatGPT.
+
 
